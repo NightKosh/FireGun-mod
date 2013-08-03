@@ -1,12 +1,8 @@
 package FireGun.item;
 
 import FireGun.entity.FireBall;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.EnumToolMaterial;
@@ -33,7 +29,7 @@ public class ItemFireGun extends ItemBow {
         this.setMaxDamage(1500);
 
         this.toolMaterial = EnumToolMaterial.EMERALD;
-
+        this.func_111206_d("firegun:fire_gun");
     }
 
     /**
@@ -117,12 +113,6 @@ public class ItemFireGun extends ItemBow {
                 world.spawnEntityInWorld(fireball);
             }
         }
-    }
-
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void registerIcons(IconRegister register) {
-        this.itemIcon = register.registerIcon("FireGun:fireGun");
     }
 
     /**

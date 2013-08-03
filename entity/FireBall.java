@@ -18,7 +18,7 @@ import net.minecraft.world.World;
  */
 public class FireBall extends EntitySmallFireball {
 
-    private double damage = 4;
+    private double damage = 5;
     /**
      * The amount of knockback an arrow applies when it hits a mob.
      */

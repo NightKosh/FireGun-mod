@@ -39,7 +39,7 @@ public class FireGunMod {
 
     @PreInit
     public void preInit(FMLPreInitializationEvent event) {
-        FireGunConfig.getInstance(event.getModConfigurationDirectory().getAbsoluteFile());
+        FireGunConfig.getInstance(event.getSuggestedConfigurationFile());
     }
 
     @Init
