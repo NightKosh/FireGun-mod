@@ -40,6 +40,26 @@ public class ItemFireGun extends ItemBow {
     public void onPlayerStoppedUsing(ItemStack itemStack, World world, EntityPlayer player, int par4) {
     }
 
+
+
+    /**
+     * Called whenever this item is equipped and the right mouse button is pressed. Args: itemStack, world, entityPlayer
+     */
+    @Override
+    public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer player) {
+        ArrowNockEvent event = new ArrowNockEvent(player, itemStack);
+        MinecraftForge.EVENT_BUS.post(event);
+        if (event.isCanceled()) {
+            return event.result;
+        }
+
+        if (player.capabilities.isCreativeMode || player.inventory.hasItem(Item.fireballCharge.itemID)) {
+            player.setItemInUse(itemStack, this.getMaxItemUseDuration(itemStack));
+        }
+
+        return itemStack;
+    }
+
     /**
      * Called each tick while using an item.
      *
