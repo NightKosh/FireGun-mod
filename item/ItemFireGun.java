@@ -29,7 +29,7 @@ public class ItemFireGun extends ItemBow {
         this.setMaxDamage(1500);
 
         this.toolMaterial = EnumToolMaterial.EMERALD;
-        this.func_111206_d("firegun:fire_gun");
+        this.setTextureName("firegun:fire_gun");
     }
 
     /**
